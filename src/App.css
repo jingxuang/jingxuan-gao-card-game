@@ -1,38 +1,47 @@
-.App {
-  text-align: center;
+.row-header{
+    margin:0px auto;
+    padding:0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.row-content {
+    margin:0px auto;
+    padding: 50px 0px 50px 0px;
+    border-bottom: 1px ridge;
+    min-height:400px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar-dark {
+    background-color: #512DA8;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+Link {
+    text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+.game-board {
+    display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.my-card {
+    display: table-cell;
+    height: 135px;
+    width: 100px;
+    padding: 3px;
+    border-radius: 15px;
+    background-color: whitesmoke;
+    z-index: 10;
+}
+
+.my-card-image {
+    width: 70px;
+    height: 30px;
+    z-index: 1;
+}
+
+.rule-body {
+    padding-left: 20px;
+}
+
+.rule-title {
+    text-align: center;
 }
