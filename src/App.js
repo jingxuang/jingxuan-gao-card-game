@@ -4,6 +4,7 @@ import {Provider} from 'react-redux';
 import {configureStore} from './redux/ConfigureStore';
 import Main from './components/MainComponent';
 import './App.css';
+import 'react-notifications-component/dist/theme.css'
 
 const store = configureStore();
 class App extends Component {

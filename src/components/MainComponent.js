@@ -6,6 +6,7 @@ import Rule from './RuleComponent';
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import { drawCards, initGame, selectCard, setGameLevel } from '../redux/ActionCreator';
 import { connect } from 'react-redux';
+import ReactNotification from 'react-notifications-component'
 
 const mapStateToProps = state => {
     return {
@@ -25,6 +26,7 @@ class Main extends Component {
     render() {
         return(
             <div>
+                <ReactNotification />
                 <Header />
                 <Switch>
                     <Route exact path='/home' component={() => <Home initGame={this.props.initGame} level={this.props.game.level} handleLevel={this.props.setGameLevel}/>} />

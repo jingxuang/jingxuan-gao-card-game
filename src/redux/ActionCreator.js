@@ -1,5 +1,6 @@
 import * as ActionTypes from './ActionTypes';
 import {CARD_SET, CARD_SET_EASY} from '../shared/cards';
+import { store } from 'react-notifications-component';
 
 export const setGameLevel = (level) => ({
     type: ActionTypes.SET_LEVEL,
@@ -56,7 +57,19 @@ export const selectCard = (game, index) => {
 
     if(isValid(candidates)) { // 
 
-        alert("Success!");
+        store.addNotification({
+            title: "Wonderful!",
+            message: "You found a set",
+            type: "success",
+            insert: "top",
+            container: "top-right",
+            animationIn: ["animate__animated", "animate__fadeIn"],
+            animationOut: ["animate__animated", "animate__fadeOut"],
+            dismiss: {
+                duration: 1000,
+                onScreen: true
+              }
+        });
 
         // remove these three cards from the current cards set. 
         let toDelete = game.selected.concat(index).sort((a, b) => a - b); ;
@@ -76,7 +89,21 @@ export const selectCard = (game, index) => {
             remains: game.remains
         });
     } else { 
-        alert("Oops. Not a real set!")
+
+        store.addNotification({
+            title: "Oops!",
+            message: "That's not a set",
+            type: "danger",
+            insert: "top",
+            container: "top-right",
+            animationIn: ["animate__animated", "animate__fadeIn"],
+            animationOut: ["animate__animated", "animate__fadeOut"],
+            dismiss: {
+                duration: 2000,
+                onScreen: true
+              }
+        });
+
         return ({
             type: ActionTypes.INVALID_SET
         })
