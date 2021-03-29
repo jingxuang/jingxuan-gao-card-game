@@ -13,6 +13,7 @@
     "react-key-index": "^0.1.1",
     "react-redux": "^7.2.2",
     "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "4.0.3",
     "reactstrap": "^8.9.0",
     "redux": "^4.0.5",
@@ -42,8 +43,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "react-router-dom": "^4.3.1"
   }
 }
