@@ -12,7 +12,7 @@ export const initGame = (level) => {
     let cards = getCards(remains, 12);
 
     // TODO what to do when no cards could be drew. 
-    while(level === 'medium' && !hasSet(cards)) {
+    while(level === 'medium' && getSet(cards).length === 0) {
         cards = cards.concat(getCards(remains, 3));
     }
 
@@ -130,16 +130,16 @@ function getCards(remains, num) {
     return cards;
 }
 
-function hasSet(cards) {
+function getSet(cards) {
     for(var i = 0; i < cards.length - 2; i++) {
         for(var j = i+1; j < cards.length - 1; j++) {
             for(var k = j + 1; k < cards.length; k++) {
                 if(isValid([cards[i], cards[j], cards[k]]))
-                    return true;
+                    return [i, j, k];
             }
         }
     }
-    return false;
+    return [];
 }
 
 function isValid(candidates) {
@@ -154,3 +154,5 @@ function isValid(candidates) {
 }
 
 const random = (len) => Math.floor(Math.random() * len);
+
+export {getSet};
